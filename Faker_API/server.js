@@ -3,20 +3,10 @@ const app = express();
 const { faker } = require('@faker-js/faker');
 // req is short for request
 // res is short for response
-app.get("/api",(req, res) => {
-    res.json(jsonData);
-});
 
 const server = app.listen(8000, () =>
     console.log(`Server is locked and loaded on port ${server.address().port}!`)
 );
-
-
-const jsonData = {
-    nombres: ['Juan', 'María', 'Pedro']
-};
-
-
 
 class  Usuario {
     constructor(){
@@ -42,13 +32,9 @@ class Empresa{
 }
 
 
-
-
 app.get("/api/user/user/new", (req, res) => {
     res.json(  new Empresa() );
 });
-
-
 
 app.get("/api/user/companies/new", (req, res) => {
     res.json(  new Usuario()  );
